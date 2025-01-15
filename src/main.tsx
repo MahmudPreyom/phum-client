@@ -6,6 +6,7 @@ import router from "./routes/routes.tsx";
 import { persistor, store } from "./redux/store.ts";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import { Toaster } from "sonner";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -13,11 +14,7 @@ createRoot(document.getElementById("root")!).render(
       <PersistGate loading={null} persistor={persistor}>
         <RouterProvider router={router} />
       </PersistGate>
+      <Toaster />
     </Provider>
   </StrictMode>
 );
-
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch;
