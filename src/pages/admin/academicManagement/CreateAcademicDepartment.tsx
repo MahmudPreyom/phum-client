@@ -53,7 +53,7 @@ const CreateAcademicDepartment = () => {
             options={facultyOptions}
             disabled={isLoading}
             // loading={isLoading} // Show loading spinner while data is being fetched
-            placeholder="Select a faculty"
+            // placeholder="Select a faculty"
           />
 
           <Button htmlType="submit" type="primary">
